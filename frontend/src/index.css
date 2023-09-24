@@ -1,12 +1,13 @@
 /* Colour Palette */
 :root {
   --background: #193551;
-  --background-dark: #274770;
+  --background-surface: #274770;
 }
 
 body {
   margin: 0;
-  background-color: var(--background);
+  height: 100vh;
+  background-color: var(--background-surface);
   font-family: "EB Garamond", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
