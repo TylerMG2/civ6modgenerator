@@ -1,8 +1,0 @@
-#form-layout {
-  display: flex;
-  gap: 10px;
-}
-
-#form-layout > img {
-  width: 20%;
-}

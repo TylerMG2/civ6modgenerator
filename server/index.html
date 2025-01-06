@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+<body>
+    <form hx-post="/generate" hx-trigger="submit" hx-target="#output">
+        <label for="leader_name">Leader Name:</label>
+        <input type="text" id="leader_name" name="leader_name" required>
+        <br>
+        <label for="civilization">Civilization:</label>
+        <input type="text" id="civilization" name="civilization" required>
+        <br>
+        <button type="submit">Generate SQL</button>
+    </form>
+    <div id="output"></div>
+</body>
+</html>
