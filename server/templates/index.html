@@ -2,17 +2,59 @@
 <html>
 <head>
     <script src="https://unpkg.com/htmx.org"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='theme.css') }}">
 </head>
 <body>
     <form hx-post="/generate" hx-trigger="submit" hx-target="#output">
-        <label for="leader_name">Leader Name:</label>
-        <input type="text" id="leader_name" name="leader_name" required>
+        <div class="civ-input-wrapper">
+            <input class="civ-input" type="text" id="civ_name" name="civ_name" required>
+        </div>
         <br>
         <label for="civilization">Civilization:</label>
         <input type="text" id="civilization" name="civilization" required>
         <br>
+        <div class="civ-select">
+            <input type="hidden" class="select-hidden" name="ethnicity" id="ethnicity" required>
+            <div class="civ-input-wrapper civ-select-input">
+                <div class="civ-input civ-select-value" name>
+                    <p class="civ-select-display-value">Ethnicity</p>
+                    <br>
+                </div>
+                <div class="civ-input civ-select-arrow"></div>
+            </div>
+            <div class="civ-select-options-wrapper">
+                <div class="civ-select-options">
+                    <div data-value="ETHNICITY_AFRICAN" class="civ-input-wrapper">
+                        <div class="civ-input">African</div>
+                    </div>
+                    <div data-value="ETHNICITY_ASIAN" class="civ-input-wrapper">
+                        <div class="civ-input">Asian</div>
+                    </div>
+                    <div data-value="ETHNICITY_EURO" class="civ-input-wrapper">
+                        <div class="civ-input">European</div>
+                    </div>
+                    <div data-value="ETHNICITY_MEDIT" class="civ-input-wrapper">
+                        <div class="civ-input">Mediterranean</div>
+                    </div>
+                    <div data-value="ETHNICITY_SOUTHAM" class="civ-input-wrapper">
+                        <div class="civ-input">South American</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <input type="range" id="age" name="age" min="0" max="5" required>
+
+        <button class="civ-add-button">Add</button>
+
+        <div class="civ-tab-button-frame">
+            <div class="civ-tab-button-wrapper">
+                <button class="civ-tab-button">Civilisation</button>
+            </div>
+        </div>
+        
         <button type="submit">Generate SQL</button>
     </form>
-    <div id="output"></div>
+    <script src="{{ url_for('static', filename='dropdown.js') }}"></script>
 </body>
 </html>
