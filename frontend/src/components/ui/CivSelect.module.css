@@ -1,0 +1,73 @@
+.CivSelect {
+    display: flex;
+    position: relative;
+    width: 200px;
+    justify-content: center;
+}
+
+.CivSelectInput {
+    width: 100%;
+    display: flex;
+    gap: 7px;
+}
+
+.CivSelectValue {
+    border-radius: var(--input-border-radius) 0px 0px var(--input-border-radius);
+    flex-grow: 1;
+}
+
+.CivSelectValue > p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.CivSelectValue::after {
+    content: '';
+    display: block;
+    width: 1px;
+    background-color: var(--border); /* Adjust the color as needed */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 26px;
+}
+
+.CivSelectArrow {
+    width: 20px;
+    border-radius: 0px var(--input-border-radius) var(--input-border-radius) 0px;
+    display: flex;
+}
+
+.CivSelectArrow::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 7px solid #F0DDAD;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    left: 1px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.CivSelectOptionsWrapper {
+    /* display: none; */
+    position: absolute;
+    top: 100%;
+    margin-top: 2px;
+    padding: 2px;
+    width: 100%;
+    border: 2px solid #322614;
+    background: linear-gradient(180deg, #745D3F 0%, #4C3C26 100%);
+}
+
+.CivSelectOptions {
+    background-color: var(--border);
+    border: 1px solid #0C161E;
+    border-radius: var(--input-border-radius);
+}

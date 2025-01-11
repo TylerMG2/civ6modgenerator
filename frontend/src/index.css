@@ -5,10 +5,74 @@ body {
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: url('/src/assets/cursor.png'), auto;
+  height: 100vh;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --border: #04192A;
+  --border-inner: #051f35;
+  --border-inner-hover: #092D4B;
+
+  --drop-down-gradient: linear-gradient(180deg, #0B324E 0%, #144870 100%);
+  --highlight-gradient: linear-gradient(180deg, #A49471 0%, #1F1A11 100%);
+
+  /* Text input */
+  --text-input-border: #13314B;
+
+  --input-border-radius: 6px;
+  --input-inner-border-radius: 4px;
+
+  /* Tab buttons */
+  --tab-button-inner-border: #1B160F;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.civ-input-wrapper {
+  display: flex;
+  border-radius: var(--input-border-radius);
+  border: 2px solid var(--border);
+  background: linear-gradient(180deg, #0B324E 0%, #062640 15%, #0A3558 85%, #154A72 100%);
+  padding: 3px;
+}
+
+.civ-input-wrapper:hover {
+  background: linear-gradient(180deg, #0E5284 0%, #138AA7 100%) !important;
+
+  .civ-input {
+      background: linear-gradient(180deg, #0A3457 0%, #0B4471 100%) !important;
+      border-color: var(--border-inner-hover)
+  }
+}
+
+.civ-input {
+  border-radius: 4px;
+  border: 1px solid var(--border-inner);
+  background: linear-gradient(180deg, #062640 0%, #0A3558 100%);
+  color: white;
+  text-align: center;
+
+  width: 100%;
+
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:hover {
+  cursor: unset;
 }
